@@ -1,0 +1,7 @@
+.idea
+!eth_hospital/datadir/empty.txt
+**/datadir*/*
+**/build
+**/node_modules
+**/package-lock.json
+**/*.log
