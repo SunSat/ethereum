@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script>
+        const contract_address = "0xa1DCd6119528b5865065Fe0a48644d9C3EDDF509";
+        const abi = [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "adopters",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "petId",
+          "type": "uint256"
+        }
+      ],
+      "name": "adopt",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getAdopters",
+      "outputs": [
+        {
+          "internalType": "address[16]",
+          "name": "",
+          "type": "address[16]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
+    let contract;
+    window.addEventListener('load', () => {
+      alert("Hello World!");
+    if(typeof(web3) === 'undefined') {
+      alert("oops! No Web3 seems to be.");
+        return console.log("Metamask is not installed.");
+    }
+    contract = new web3.eth.contract(abi,contract_address);
+
+    web3.eth.getBlock(13, function(error, result){
+   if(!error)
+       alert(JSON.stringify(result));
+   else
+       alert(error);
+  })
+
+  alert(web3.eth.getEtherBase());
+
+  alert("Contract called successfully. " + contract);
+});
+    
+    </script>
+  </head>
+  <body>
+    <h1>Welcome to DAPP</h1>
+    <div id="message"></div>
+  </body>
+</html>
