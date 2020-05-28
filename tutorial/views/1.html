@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Smart Contract</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" crossorigin="anonymous">
+        <style>
+            td {
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="padding: 3%;">
+            <h2>Ethereum Network Setup details.</h2>
+            <table>
+                <tr>
+                    <td>
+                        <label>Ethereum Ganache RPC Server Url</label>
+                    </td>
+                    <td>
+                        <input type="text" name="url" id="url" placeholder="http://127.0.0.1:8545" value="http://127.0.0.1:8545">
+                    </td>
+                </tr>    
+                <tr>
+                    <td>
+                        <label>Network Id from truffle-config.js file</label>
+                    </td>
+                    <td>
+                        <input type="text" name="networkId" id="networkId" placeholder="2023" value="2023">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="Click to initiate network." id="btn_initiate_network">
+                    </td>
+                </tr>
+            </table>
+            <label style="color: green;" id="metadata_message_1"></label>
+            <br>
+            <label style="color: green;" id="metadata_message_2"></label>
+        </div>
+        <div id="smart_contract_meta_data" style="padding: 3%;" hidden  >
+            <h2>Deployed Smart Contract Meta data.</h2>
+            <table>
+                <tr>
+                    <td>
+                        Account Address : 
+                    </td>
+                    <td>
+                        <input type="text" id="account_address" style="width: 400px;" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Account Private Key: 
+                    </td>
+                    <td>
+                        <input type="text" id="account_private_key" style="width: 400px;" required >
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label style="color: green;"><b>Note : </b>Account Address and private key you can get it from Ganache -> Accounts -> Show Private Key. Use the first Account.</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Deployed Smart Contract Address.</label>
+                    </td>
+                    <td>
+                        <input type="text" id="address_smartcontract" style="width: 400px;" placeholder="Smart Contract Address get from Ganache -> Contract Tab." required >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label><b>ABI for Calculator Smart Contract you can get it after compile of Smart Contract from build/contracts folder.</b></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ABI of Calculator Smart Contract:
+                    </td>
+                    <td>
+                        <textarea style="width: 400px; height: 300px;" id="abi_data" required>
+
+[
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "getResult",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "num1",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "num2",
+          "type": "uint256"
+        }
+      ],
+      "name": "addToNumber",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "num1",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "num2",
+          "type": "uint256"
+        }
+      ],
+      "name": "substractFromNumber",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ]
+                        </textarea>
+                    </td>
+                </tr>
+            </table>
+            <h2>Calculator Smart Contract</h2>
+            <table>
+                <tr>
+                    <td>
+                        <label>Enter A Number : </label>
+                    </td>
+                    <td>
+                        <input type="number" id="input_a" required value="12" style="width: 150px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label> Enter B Number: </label>
+                    </td>
+                    <td>
+                        <input type="number" id="input_b" required value="15" style="width: 150px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label> Opetaions: </label>
+                    </td>
+                    <td>
+                        <input type="button" name="Add" id="btn_add" value="Add" style="margin-right: 2%;">
+                        <input type="button" name="Get Result" id="btn_getResult" value="Get Current Value">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label> Result </label>
+                    </td>
+                    <td>
+                        <label id="final_result" style="color: green;"></label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/truffle-contract@4.0.31/dist/truffle-contract.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js" charset="utf-8" type="text/javascript"></script>
+        <script>
+            //You need to start Ganache network in port. 
+            let url = "http://127.0.0.1:8545";
+            let networkId = 2023;
+            let httpProvider;
+            let contract_address;
+            let account_address;
+            let account_private_key;
+            let abi;
+            let wallet;
+            let contractWithSigner;
+            let contract;
+
+            $(window).on('load',function() {
+                init();
+            });
+
+            function init() {
+                pageSetup();
+            }
+
+            function pageSetup() {
+                $('#btn_initiate_network').click(function() {
+                    url = $('#url').val();
+                    networkId = $('#networkId').val();
+                    console.log("The url is",url);
+                    console.log("And the network id Is ", networkId);
+                    ethereumNetworkSetup();
+                });
+
+                $('#btn_add').click(function () {
+                    initiateMetaData();
+                    contract = new ethers.Contract(contract_address,abi,httpProvider);
+                    wallet = new ethers.Wallet(account_private_key, httpProvider);
+                    contractWithSigner = contract.connect(wallet);
+                    
+                    let valA = $('#input_a').val();
+                    let valB = $('#input_b').val();
+                    contractWithSigner.addToNumber(valA,valB).then((tx) => {
+                        console.log("called the smart contract successfull. And the Has is : ", tx.hash);
+                        tx.wait().then(() => {
+                            contract.getResult().then((newValue) => {
+                                console.log(newValue);
+                                $('#final_result').text(newValue);
+                            });
+                        });
+                    });
+                });
+
+                $('#btn_getResult').click(function () {
+                    initiateMetaData();
+                    contract = new ethers.Contract(contract_address,abi,httpProvider);
+                    contract.getResult().then((result) => {
+                        $('#final_result').text(result);
+                    });
+                });
+                
+            }
+
+            function initiateMetaData() {
+                contract_address = $('#address_smartcontract').val();
+                abi = $('#abi_data').val();
+                account_address = $('#account_address').val();
+                account_private_key = $('#account_private_key').val();
+            }
+
+            function ethereumNetworkSetup() {
+                try {
+                    httpProvider = new ethers.providers.JsonRpcProvider(url);
+                    httpProvider.getBlockNumber().then((blockNu) => {
+                        $('#metadata_message_1').text("Network Initiated Successfully. The total number of Block is : "+ blockNu + ".");
+                        $('#metadata_message_2').text("Browser succecssfully able to communicate with your Ganache Network and its ready to invoke Calculator Smart Contract.")
+                        $('#smart_contract_meta_data').show();
+                    })
+                } catch(e) {
+                    console.log(e);
+                    alert('Error while setting up network. Check Ganache network up and running and Url is correct.');
+                }
+            }
+        </script>
+    </body>
+</html>
