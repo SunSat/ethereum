@@ -30,6 +30,17 @@ pre {
 li {
   margin-top: 1%;
 }
+
+td {
+  padding-bottom: 1%;
+}
+
+table {
+  width: 100%;
+}
+
+
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -239,8 +250,8 @@ li {
           <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Tutorial 2 : Solidity : Ethereum network APIs and its functionality.</h1>
-              <p>In this blog you will be learning Ethereum network APIs (eth, personal, network, admin, debug, miner & txpool)</p>
+              <h1>Tutorial 2 : Deploy & Invoke Smart Contract in Infura Or Your Private Network dynamically.</h1>
+              <p>In this blog you will be learning How to Deploy and Invoke Smart Contract in Infura Or Your private network.</p>
             </div>
           </div>
         </div>
@@ -963,56 +974,314 @@ ganache: {
         </div>
       </div>
     </div>
+  </div>  
+</div>
 
-    <div class="container ethFunctions_api" id="container_api">
+<div class="container ethFunctions_api" id="container_api">
+  <div class="row featurette">
+    <div class="col-md-12">
+      <div style="text-align: center;">
+        <h1>Tutorial 2 : Deploy & Invoke Smart Contract in Infura Or Your Private Network dynamically.</h1>
+        <p>In this blog you will be learning How to Deploy and Invoke Smart Contract in Infura Or Your private network.</p>
+      </div>
+      <div class="row featurette">
+        <div class="col-md-10">
+          <p><h4>Notes : </h4></p>
+          <p class="lead">
+            <p>1 : To proceed with Tutorial 2. You need to complete <a href="#navebar_home">Tutorial 1 </a> Or You need to have basic understanding of Ethereum Blockchain.</p> 
+            <p>2 : To proceed with Tutorial 2. You need to have <a href="https://infura.io/">Infura Account on any TestNets</a> Or Your Private Ethereum Network Account Or Ganache to Depoy Smart Contract</p>
+            <p>3 : Using <a href="https://metamask.io/">Metamask </a> you can have your own TestNet accounts and using <a href="https://faucet.ropsten.be/">Ropsten Faucet</a> You can get Ethers. </p>
+            <br>
+          </p>
+          <p class="lead">
+            <br>
+            <div style="padding-left: 0%;">
+              <p class="lead">
+                <h4 style="text-align: center;">Connecting to Ethereum</h4>
+                <br>
+                <table style="width: 100%; text-align: left;">
+                  <tr>
+                    <td style="width: 40%;">
+                      <label> Url to connect with Ethereum Network : </label>
+                    </td>
+                    <td style="width: 40%;">
+                        <input type="text" id="api_txt_eth_network_connector_url" placeholder="Url" style="width: 80%;" value="https://ropsten.infura.io/v3/7f99dee2c7054b4c9dc4b465e62c5e04"> 
+                    </td>
+                    <td style="width: 20%;">
+                      <input type="button" value="Connect Me" id="api_btn_eth_network_connector_url">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width: 40%;">
+                      <label> Result :  </label>
+                    </td>
+                    <td style="width: 60%;" colspan="2">
+                        <label id="api_btn_eth_network_connector_url_result"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>Get Block Number : </label>
+                    </td>
+                    <td>
+                      <input type="button" id="api_btn_get_block_number" value="Latest Block Number">
+                    </td>
+                    <td>
+                      <label id="api_lbl_get_block_number"></label>
+                    </td>
+                  </tr>
+                </table>
+                <hr>
+              </p>
+              <div>
+                <p class="lead" id="api_deeploy_new_contract_p">
+                  <h4 style="text-align: center;">Deploying New smart contract</h4>
+                  <br>
+                  <table style="width: 100%; text-align: left;">
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> Base Address From Ganache Or Your private network Address : </label>
+                      </td>
+                      <td style="width: 60%;">
+                          <input type="text" id="api_txt_deploy_base_address" placeholder="Url" style="width: 80%;" value="0x0AFcc4CEc33354f7738fA695D220b311c503F1CB"> 
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> Private Key of this base address : </label>
+                      </td>
+                      <td style="width: 60%;">
+                          <input type="text" id="api_txt_deploy_base_address_private_key" placeholder="Url" style="width: 80%;" value="782B0D694A0E51512836D2D158116C8BE40C114C161C3741F77C2FC4B8B8996E"> 
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> ABI after Compile Your Smart Contract(Will be available in compile folder Calculator.json file) :  </label>
+                      </td>
+                      <td style="width: 60%;">
+                          <textarea id="api_txt_deploy_abi" style="width: 80%; height: 300px;">
+                            [
+                            {
+                              "inputs": [],
+                              "stateMutability": "nonpayable",
+                              "type": "constructor"
+                            },
+                            {
+                              "inputs": [
+                                {
+                                  "internalType": "uint256",
+                                  "name": "x",
+                                  "type": "uint256"
+                                }
+                              ],
+                              "name": "set",
+                              "outputs": [],
+                              "stateMutability": "nonpayable",
+                              "type": "function"
+                            },
+                            {
+                              "inputs": [],
+                              "name": "get",
+                              "outputs": [
+                                {
+                                  "internalType": "uint256",
+                                  "name": "",
+                                  "type": "uint256"
+                                }
+                              ],
+                              "stateMutability": "view",
+                              "type": "function",
+                              "constant": true
+                            }
+                          ]                            
+                          </textarea>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> Byte Code of the smart contract(Will be available in compile folder Calculator.json file) : </label>
+                      </td>
+                      <td style="width: 60%;">
+                          <textarea id="api_txt_deploy_byte_code" style="width: 80%; height: 100px;">
+                            0x608060405234801561001057600080fd5b50600a60008190555060c7806100276000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146062575b600080fd5b606060048036036020811015604b57600080fd5b8101908080359060200190929190505050607e565b005b60686088565b6040518082815260200191505060405180910390f35b8060008190555050565b6000805490509056fea2646970667358221220383e6159d4ebe3d52f167a3d7685ef1c06b79b745f88054de09274a7bd96d48e64736f6c63430006040033
+                          </textarea>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" style="text-align: center;">
+                        <button id="api_btn_deploy_smart_contract">Deploy Smart Contract.</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>Deployed Smart Contract Address : </label>
+                      </td>
+                      <td>
+                        <label id="api_lbl_deploy_success_contract_address"></label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>Deployed Smart Contract Transaction Hash : </label>
+                      </td>
+                      <td>
+                        <label id="api_lbl_deploy_success_contract_hash"></label>
+                      </td>
+                    </tr>
+                  </table>
+                  <hr>
+                </p>
+                <p class="lead" id="api_invoke_deployed_contract_p">
+                  <h4 style="text-align: center;">Invoking Deployed Contract.</h4>
+                  <br>
+                  <table style="width: 80%; text-align: left;">
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> Deployed Contract Address : </label>
+                      </td>
+                      <td style="width: 60%;">
+                          <input type="text" id="api_txt_deployed_contract_address" placeholder="Not Base Addresss!" style="width: 80%;" value="0x40e04fB5b062aBB843d2551336Be897ff9bA7B0A"> 
+                      </td>
+                    </tr>
 
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> Private Key of this base address : </label>
+                      </td>
+                      <td style="width: 60%;">
+                          <input type="text" id="api_txt_deployed_base_address_private_key" placeholder="Private Key of Base Address." style="width: 80%;" value="782B0D694A0E51512836D2D158116C8BE40C114C161C3741F77C2FC4B8B8996E"> 
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> ABI after Compile Your Smart Contract(Will be available in compile folder Calculator.json file) :  </label>
+                      </td>
+                      <td style="width: 60%;">
+                          <textarea id="api_txt_deployed_abi" style="width: 80%; height: 300px;">
+                            [
+                            {
+                              "inputs": [],
+                              "stateMutability": "nonpayable",
+                              "type": "constructor"
+                            },
+                            {
+                              "inputs": [
+                                {
+                                  "internalType": "uint256",
+                                  "name": "x",
+                                  "type": "uint256"
+                                }
+                              ],
+                              "name": "set",
+                              "outputs": [],
+                              "stateMutability": "nonpayable",
+                              "type": "function"
+                            },
+                            {
+                              "inputs": [],
+                              "name": "get",
+                              "outputs": [
+                                {
+                                  "internalType": "uint256",
+                                  "name": "",
+                                  "type": "uint256"
+                                }
+                              ],
+                              "stateMutability": "view",
+                              "type": "function",
+                              "constant": true
+                            }
+                          ]
+                          </textarea>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> Method Name to Invoke :  </label>
+                      </td>
+                      <td style="width: 40%;">
+                          <input type="text" id="api_txt_deployed_method_name" style="width: 80%;" value="get">
+                      </td>
+                      <td>
+                        Is View Function? : <input type="checkbox" id="api_chx_is_view_function"> 
+                     </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> Any Comma Seperated Arg List : </label>
+                      </td>
+                      <td style="width: 50%;">
+                        <input type="text" id="api_txt_deployed_arg_list" style="width: 80%;" placeholder="!!!Supports Only Single Argument!!!!!.">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" style="text-align: center;">
+                        <button id="api_btn_deployed_invoke_smart_contract">Invoke Smart Contract Method.</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>Result : </label>
+                      </td>
+                      <td>
+                        <label id="api_lbl_invoke_success_contract_address"></label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>Deployed Smart Contract Transaction Hash : </label>
+                      </td>
+                      <td>
+                        <label id="api_lbl_invoke_success_contract_hash"></label>
+                      </td>
+                    </tr>
+                  </table>
+                  <hr>
+                </p>             
+               </div>
+            </div>
+          </p>
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>  
+
+<div class="container ethFunctions_project_1_walet" id="container_project_1_calculator_app">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+    </div>
+  </div>
+</div>
+<div class="container ethFunctions_project_1_walet" id="container_project_2_wallet_app">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="container">
+  <div class="row featurette">
+    <footer>
       <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-    </div>  
-
-    <div class="container ethFunctions_project_1_walet" id="container_project_1_calculator_app">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-    </div>
-    <div class="container ethFunctions_project_1_walet" id="container_project_2_wallet_app">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-    </div>
-    <!-- FOOTER -->
-    <div class="container">
-      <div class="row featurette">
-        <footer>
-          <hr class="featurette-divider">
-          <p class="pull-right"><a href="#">Back to top</a></p>
-          <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-        </footer>    
-      </div>
-    </div>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+      <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>    
+  </div>
+</div>
 
     <script src="http://fenixrepo.fao.org/cdn/js/bootstrap-table/1.10.1/docs/assets/js/ie-emulation-modes-warning.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -1028,56 +1297,22 @@ ganache: {
       let page_active= "#container_home";
       let page_names=["#container_home","#container_api","#container_project_1_calculator_app","#container_project_2_wallet_app"]
 
-      let contractJson = [
-    {
-      "inputs": [],
-      "stateMutability": "nonpayable",
-      "type": "constructor"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "x",
-          "type": "uint256"
-        }
-      ],
-      "name": "set",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "get",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    }
-  ]
-
-      let address = '0xb0de1cfDD51a91157a698c9f73d38a2C939BA06B';
-
       $(window).on('load',function() {
         console.log("Loaded......");
-        initiatePage();
-        initEthNetwork();
+        initiateHomePage();
+        //initEthNetwork();
+        initiateApiPage();
       }); 
 
-      function initiatePage() {
+      function initiateHomePage() {
 
         page_names.forEach((pageName) => {
           console.log("the page name is : ", pageName);
-          //if(pageName !== '#container_home')
-            //$(pageName).hide();
+          if(pageName !== '#container_api')
+            $(pageName).hide();
         });
+
+        $('#api_deeploy_new_contract_p').hide();
 
         $("#li_navbar_home").on('click',function() {
           util_navebarSetup('#li_navbar_home',navebar_active);
@@ -1123,17 +1358,60 @@ ganache: {
       }
 
 
+      /*
+      API Releated Vairable and Javascript Code.
+      */
+      let api_btn_eth_network_connector_url;
+      let api_provider;
+      let api_network;
+      let api_wallet;
+      let api_baseAddress;
+      let api_privateKey;
+      let api_abi;
+      let api_byteCode;
+      let api_contract_factory;
+      let api_contract;
+      let api_contractAddress;
+      let api_transaction_hash;
 
-      let provider;
-      let network;
+      function initiateApiPage() {
+        $('#api_btn_eth_network_connector_url').on('click',function(e) {
+          api_btn_eth_network_connector_url = $('#api_txt_eth_network_connector_url').val();
+          initEthNetwork();
+        })
+
+        $('#api_btn_get_block_number').on('click',function() {
+          api_provider.getBlockNumber().then((blockNu) => {
+            $('#api_lbl_get_block_number').html(blockNu);
+          })
+        });
+
+        $('#api_btn_deploy_smart_contract').on('click',function() {
+          deployNewSmartContract();
+        });
+
+        $('#api_btn_deployed_invoke_smart_contract').on('click',function() {
+          invokeDeployedContract();
+        });
+      }
 
       async function initEthNetwork() {
-        provider = new ethers.providers.JsonRpcProvider();
-        network = await provider.getNetwork();
-        getBalance(address);
-        //getTransactionCount(address);
-        invokeContract();
-        console.log(ethers.utils.keccak256([ 0x42 ]));
+        try {
+
+          api_provider = new ethers.providers.JsonRpcProvider(api_btn_eth_network_connector_url);
+          api_provider.ready.then((pro)=> {
+            console.log("connected... ",api_btn_eth_network_connector_url)
+            $('#api_btn_eth_network_connector_url_result').text("Connected");
+            $('#api_btn_eth_network_connector_url_result').css("color","green");
+          },(err) => {
+            console.error("error or error.", err);
+            $('#api_btn_eth_network_connector_url_result').text("Error Try Again, Url Might be wrong. Or Server May not be up.");
+            $('#api_btn_eth_network_connector_url_result').css("color","red");
+          }).catch((e) => {
+            console.error("error while connecting to network. Either Url wrong Or Network may not up.", e);
+          }).finally(console.log);
+        } catch(e) {
+        }
       }
 
       function getBalance(address) {
@@ -1149,12 +1427,70 @@ ganache: {
         });
       }
 
-      async function invokeContract() {
-        let contract = await new ethers.Contract(address, contractJson, provider);
-        contract.get().then((value) => {
-          console.log("The vlaue is get is : ", value);
-        });
+      async function deployNewSmartContract() {
+        try {
+          api_baseAddress = $('#api_txt_deploy_base_address').val().trim();
+          api_privateKey = $('#api_txt_deploy_base_address_private_key').val().trim();
+          api_abi = $('#api_txt_deploy_abi').val().trim();
+          api_byteCode = $('#api_txt_deploy_byte_code').val().trim();
+          api_wallet = new ethers.Wallet(api_privateKey, api_provider);
+
+          api_contract_factory = new ethers.ContractFactory(api_abi, api_byteCode, api_wallet);
+          api_contract = await api_contract_factory.deploy();
+          api_contractAddress = api_contract.address;
+          api_transaction_hash = api_contract.deployTransaction.hash;
+          await api_contract.deployed();
+          console.log('The Contract deployed successfully.');
+
+          $('#api_lbl_deploy_success_contract_address').text(api_contractAddress);
+          $('#api_lbl_deploy_success_contract_hash').text(api_transaction_hash);
+          $('#api_btn_deploy_smart_contract').text("Deployed Successfully.");
+          $('#api_btn_deploy_smart_contract').css("color","green");
+        }catch(e) {
+          console.error("error while deploying new smart contract.", e);
+          $('#api_lbl_deploy_success_contract_address').text("Error while deploying Smart Contract. Please give proper data & Cehck Console too.");
+          $('#api_lbl_deploy_success_contract_address').css("color","red"); 
+        }
       }
+
+      async function invokeDeployedContract() {
+        try {
+          let deployed_smart_contract_add = $('#api_txt_deployed_contract_address').val().trim();
+          let base_address_private_key = $('#api_txt_deployed_base_address_private_key').val().trim();
+          let deployed_smart_contract_method_name = $('#api_txt_deployed_method_name').val().trim();
+          let deployed_smart_contract_argument = $('#api_txt_deployed_arg_list').val().trim();
+          let deployed_is_view_function = $('#api_chx_is_view_function').prop("checked");
+          let deployed_abi = $('#api_txt_deployed_abi').val().trim();
+          let just_contract = new ethers.Contract(deployed_smart_contract_add,deployed_abi,api_provider);
+          let just_wallet = new ethers.Wallet(base_address_private_key,api_provider);
+          let contractWithSigner = await just_contract.connect(just_wallet);
+          console.log(deployed_is_view_function);
+          if(!deployed_is_view_function) {
+            let tx = await contractWithSigner[deployed_smart_contract_method_name](deployed_smart_contract_argument);
+            console.log(tx.hash);
+            $('#api_lbl_invoke_success_contract_address').text("Invoked Successfully. Processing...");
+
+            $('#api_lbl_invoke_success_contract_hash').html(tx.hash);
+            $('#api_lbl_invoke_success_contract_hash').css("color","green");
+
+            await tx.wait();
+            
+            $('#api_lbl_invoke_success_contract_address').text("Invoked Successfully. Completed...");
+            $('#api_lbl_invoke_success_contract_address').css("color","green");
+
+          } else {
+            let val = await contractWithSigner[deployed_smart_contract_method_name]();
+            console.log(val.toString());
+            $('#api_lbl_invoke_success_contract_address').text(val);
+            $('#api_lbl_invoke_success_contract_address').css("color","green");
+
+            $('#api_lbl_invoke_success_contract_hash').text("");
+          }
+        }catch(err) {
+          console.error("Error while invoking deployed smart contract method.", err);
+        }
+      }
+
     </script>
   </body>
 </html>
