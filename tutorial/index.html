@@ -1005,7 +1005,7 @@ ganache: {
                       <label> Url to connect with Ethereum Network : </label>
                     </td>
                     <td style="width: 40%;">
-                        <input type="text" id="api_txt_eth_network_connector_url" placeholder="Url" style="width: 80%;" value="https://ropsten.infura.io/v3/7f99dee2c7054b4c9dc4b465e62c5e04"> 
+                        <input type="text" id="api_txt_eth_network_connector_url" placeholder="Url" style="width: 80%;"> 
                     </td>
                     <td style="width: 20%;">
                       <input type="button" value="Connect Me" id="api_btn_eth_network_connector_url">
@@ -1043,7 +1043,7 @@ ganache: {
                         <label> Base Address From Ganache Or Your private network Address : </label>
                       </td>
                       <td style="width: 60%;">
-                          <input type="text" id="api_txt_deploy_base_address" placeholder="Url" style="width: 80%;" value="0x0AFcc4CEc33354f7738fA695D220b311c503F1CB"> 
+                          <input type="text" id="api_txt_deploy_base_address" placeholder="Url" style="width: 80%;"> 
                       </td>
                     </tr>
                     <tr>
@@ -1051,7 +1051,7 @@ ganache: {
                         <label> Private Key of this base address : </label>
                       </td>
                       <td style="width: 60%;">
-                          <input type="text" id="api_txt_deploy_base_address_private_key" placeholder="Url" style="width: 80%;" value="782B0D694A0E51512836D2D158116C8BE40C114C161C3741F77C2FC4B8B8996E"> 
+                          <input type="text" id="api_txt_deploy_base_address_private_key" placeholder="Url" style="width: 80%;"> 
                       </td>
                     </tr>
                     <tr>
@@ -1059,41 +1059,7 @@ ganache: {
                         <label> ABI after Compile Your Smart Contract(Will be available in compile folder Calculator.json file) :  </label>
                       </td>
                       <td style="width: 60%;">
-                          <textarea id="api_txt_deploy_abi" style="width: 80%; height: 300px;">
-                            [
-                            {
-                              "inputs": [],
-                              "stateMutability": "nonpayable",
-                              "type": "constructor"
-                            },
-                            {
-                              "inputs": [
-                                {
-                                  "internalType": "uint256",
-                                  "name": "x",
-                                  "type": "uint256"
-                                }
-                              ],
-                              "name": "set",
-                              "outputs": [],
-                              "stateMutability": "nonpayable",
-                              "type": "function"
-                            },
-                            {
-                              "inputs": [],
-                              "name": "get",
-                              "outputs": [
-                                {
-                                  "internalType": "uint256",
-                                  "name": "",
-                                  "type": "uint256"
-                                }
-                              ],
-                              "stateMutability": "view",
-                              "type": "function",
-                              "constant": true
-                            }
-                          ]                            
+                          <textarea id="api_txt_deploy_abi" style="width: 80%; height: 300px;">                         
                           </textarea>
                       </td>
                     </tr>
@@ -1102,9 +1068,7 @@ ganache: {
                         <label> Byte Code of the smart contract(Will be available in compile folder Calculator.json file) : </label>
                       </td>
                       <td style="width: 60%;">
-                          <textarea id="api_txt_deploy_byte_code" style="width: 80%; height: 100px;">
-                            0x608060405234801561001057600080fd5b50600a60008190555060c7806100276000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146062575b600080fd5b606060048036036020811015604b57600080fd5b8101908080359060200190929190505050607e565b005b60686088565b6040518082815260200191505060405180910390f35b8060008190555050565b6000805490509056fea2646970667358221220383e6159d4ebe3d52f167a3d7685ef1c06b79b745f88054de09274a7bd96d48e64736f6c63430006040033
-                          </textarea>
+                          <textarea id="api_txt_deploy_byte_code" style="width: 80%; height: 100px;"></textarea>
                       </td>
                     </tr>
                     <tr>
@@ -1140,7 +1104,7 @@ ganache: {
                         <label> Deployed Contract Address : </label>
                       </td>
                       <td style="width: 60%;">
-                          <input type="text" id="api_txt_deployed_contract_address" placeholder="Not Base Addresss!" style="width: 80%;" value="0x40e04fB5b062aBB843d2551336Be897ff9bA7B0A"> 
+                          <input type="text" id="api_txt_deployed_contract_address" placeholder="Not Base Addresss!" style="width: 80%;"> 
                       </td>
                     </tr>
 
@@ -1149,7 +1113,7 @@ ganache: {
                         <label> Private Key of this base address : </label>
                       </td>
                       <td style="width: 60%;">
-                          <input type="text" id="api_txt_deployed_base_address_private_key" placeholder="Private Key of Base Address." style="width: 80%;" value="782B0D694A0E51512836D2D158116C8BE40C114C161C3741F77C2FC4B8B8996E"> 
+                          <input type="text" id="api_txt_deployed_base_address_private_key" placeholder="Private Key of Base Address." style="width: 80%;"> 
                       </td>
                     </tr>
                     <tr>
@@ -1158,40 +1122,6 @@ ganache: {
                       </td>
                       <td style="width: 60%;">
                           <textarea id="api_txt_deployed_abi" style="width: 80%; height: 300px;">
-                            [
-                            {
-                              "inputs": [],
-                              "stateMutability": "nonpayable",
-                              "type": "constructor"
-                            },
-                            {
-                              "inputs": [
-                                {
-                                  "internalType": "uint256",
-                                  "name": "x",
-                                  "type": "uint256"
-                                }
-                              ],
-                              "name": "set",
-                              "outputs": [],
-                              "stateMutability": "nonpayable",
-                              "type": "function"
-                            },
-                            {
-                              "inputs": [],
-                              "name": "get",
-                              "outputs": [
-                                {
-                                  "internalType": "uint256",
-                                  "name": "",
-                                  "type": "uint256"
-                                }
-                              ],
-                              "stateMutability": "view",
-                              "type": "function",
-                              "constant": true
-                            }
-                          ]
                           </textarea>
                       </td>
                     </tr>
@@ -1308,7 +1238,7 @@ ganache: {
 
         page_names.forEach((pageName) => {
           console.log("the page name is : ", pageName);
-          if(pageName !== '#container_api')
+          if(pageName !== '#container_home')
             $(pageName).hide();
         });
 
@@ -1474,7 +1404,7 @@ ganache: {
             $('#api_lbl_invoke_success_contract_hash').css("color","green");
 
             await tx.wait();
-            
+
             $('#api_lbl_invoke_success_contract_address').text("Invoked Successfully. Completed...");
             $('#api_lbl_invoke_success_contract_address').css("color","green");
 
