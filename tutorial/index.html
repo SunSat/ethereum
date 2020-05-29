@@ -11,19 +11,7 @@
 
     <title>Smart Contract Ethereum</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js" rel="stylesheet"> -->
-    <!-- <script src="javascript/external/ie-emulation-modes-warning.js"></script> -->
-    <script src="http://fenixrepo.fao.org/cdn/js/bootstrap-table/1.10.1/docs/assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- Custom styles for this template -->
-    <!-- <link href="stylesheets/carousel.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">    
     <style>
 /* GLOBAL STYLES
 -------------------------------------------------- */
@@ -33,6 +21,24 @@ body {
   padding-bottom: 40px;
   color: #5a5a5a;
 }
+
+pre {
+  padding : 2% 0% 0% 2%;
+  margin-top: 2%;
+}
+
+li {
+  margin-top: 1%;
+}
+
+td {
+  padding-bottom: 1%;
+}
+
+table {
+  width: 100%;
+}
+
 
 
 /* CUSTOMIZE THE NAVBAR
@@ -180,17 +186,17 @@ body {
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="home active" id="li_navbar_home"><a id="navebar_home">Home Setup</a></li>
+                <li class="home active" id="li_navbar_home"><a id="navebar_home">Home</a></li>
                 <li class="dropdown" id="li_navbar_dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Some Examples <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ethereum Wiki & Examples <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#" id="simpleStorage">SimpleStorage</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
+                    <li id="li_navbar_ethereum_api"><a>Ethereum APIs</a></li>
+                    <li id="li_navbar_calculator_app"><a>Calculator Dapp</a></li>
+                    <li id="li_navbar_ethereum_wallet"><a>Ethereum Wallet</a></li>
                     <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
+                    <li class="dropdown-header">Advanced Concepts</li>
+                    <li id="li_navbar_custom_token"><a>Custom Token</a></li>
+                    <li id="li_navbar_multi_sign"><a>Multi Sign</a></li>
                   </ul>
                 </li>
                 <li class="about" id="li_navbar_about"><a id="navebar_about">About</a></li>
@@ -211,35 +217,15 @@ body {
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Tutorial 1 : Eethereum : The complete course</h1>
-              <p>In this blog you will be learning Ethereum solidity api and its funcionality.</p>
-              <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Tutorial 2 : Solidity Development: Complete Ethereum BlockChain Tutorial</h1>
-              <p>How to Set Up a Private Ethereum Blockchain in 5 mins, Write smart contract, Compile, Test, Deploy and access from web.</p>
-             <!--  <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
-            </div>
-          </div>
-        </div>
-        <div class="item">
           <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Tutorial 3 : 5 Simple Steps to learn complete End-To-End Ethereum Blockchain.</h1>
-              <ol>
+              <h1>Tutorial 1 : Eethereum : The complete End-To-End tutorial</h1>
+              <p>In this blog you will be learning Ethereum solidity private network setup, develop smart contract, compile, test, deploy and access from Web..</p>
+              <ol style="text-align:left;">
                 <ul>
                   Step 1. Download, Install & Start private Ethereum blockchain using Geth CLIs.
                 </ul>
@@ -254,10 +240,18 @@ body {
                   Step 4. Compile, Test & Deployment using Truffle & Ganache.
                 </ul>
                 <ul>
-                  Step 5. Invoke smart contract from web browser using Java Sctipt.
+                  Step 5. Invoke smart contract from web browser using Java Sctipt. Since web3js is outdated we will be using ethers.js
                 </ul>
               </ol>
-             <!--  <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Tutorial 2 : Deploy & Invoke Smart Contract in Infura Or Your Private Network dynamically.</h1>
+              <p>In this blog you will be learning How to Deploy and Invoke Smart Contract in Infura Or Your private network.</p>
             </div>
           </div>
         </div>
@@ -267,7 +261,6 @@ body {
             <div class="carousel-caption">
               <h1>Access your private network from Web Browsser using Web3 Js and its functionality</h1>
               <p>Web3 Js is going to be deprecate soon. We will be using Ether.js</p>
-              <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p> -->
             </div>
           </div>
         </div>
@@ -282,11 +275,11 @@ body {
       </a>
     </div><!-- /.carousel -->
 
-    <div class="container ethFunctions home">
+    <div class="container ethFunctions_home" id="container_home">
 
       <div class="row featurette">
         <div class="col-md-12" style="text-align: center;">
-          <h2 class="featurette-heading">Tutorial 1 : How to setup Private Ethereum Blockchain & Dev Enviornment.</h2>
+          <h2 class="featurette-heading">Tutorial 1 : Eethereum : The complete End-To-End tutorial.</h2>
           <p class="lead"> In this blog you will be learn about Setup Private Ethereum Blockchain and Write Smart Contract, deploy and Access from web. Already enough explanation available about Ethereum and Solidity. We can directly jump into the steps.</p>
         </div>
       </div>
@@ -355,8 +348,8 @@ body {
               </div>
            </div>
            <div>
-            <h5>1.2: Initiate & Start a new private network with genesis.json</h5>
-            <div class="col-md-12" style="background-color: rgba(0, 0, 0, 0.05); margin: 5%; padding: 2%;" >
+              <h5>1.2: Initiate & Start a new private network with genesis.json</h5>
+              <div class="col-md-12" style="background-color: rgba(0, 0, 0, 0.05); margin: 5%; padding: 2%;" >
                <ol>
                  <li>
                   Create a new folder "eth_private_network".
@@ -367,39 +360,39 @@ body {
                  <li>
                   Copy below sample code to genesis.json file. You can refer in <a href="https://github.com/ethereum/go-ethereum/wiki/Private-network">Ethereum Wiki</a>
                    <pre style="margin: 10px;">
-                     {
-                      "alloc": {},
-                      "config": {
-                          "chainId": 2022,
-                          "homesteadBlock": 0,
-                          "DAOForkBlock": 0,
-                          "DAOForkSupport": true,
-                          "eip150Block": 0,
-                          "eip155Block": 0,
-                          "eip158Block": 0
-                      },
-                      "difficulty": "0x400",
-                      "gasLimit": "0x989680",
-                      "nonce": "0x0000000000000042",
-                      "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-                      "coinbase": "0x0000000000000000000000000000000000000000",
-                      "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-                      "extraData": "",
-                      "timestamp": "0x00"
-                  }
-                </pre>
+{
+  "alloc": {},
+  "config": {
+    "chainId": 2022,
+    "homesteadBlock": 0,
+    "DAOForkBlock": 0,
+    "DAOForkSupport": true,
+    "eip150Block": 0,
+    "eip155Block": 0,
+    "eip158Block": 0
+  },
+  "difficulty": "0x400",
+  "gasLimit": "0x989680",
+  "nonce": "0x0000000000000042",
+  "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "coinbase": "0x0000000000000000000000000000000000000000",
+  "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "extraData": "",
+  "timestamp": "0x00"
+}   
+                  </pre>
                  </li>
                  <li>
                   Initiate Geth a new private blockchain with below command in new terminal
                   <pre> 
-                    > cd path_to_eth_private_network
-                    > geth --datadir ./datadir init ./genesis.json
+$ cd path_to_eth_private_network
+$ geth --datadir ./datadir init ./genesis.json
                   </pre>
                  </li>
                  <li>
                   After initiate start new Private Blockchain the command
                   <pre>
-                    > geth --datadir ./datadir --networkid 2022 --rpc --rpcport 30303 --allow-insecure-unlock console 2>> ./tmp.log
+$ geth --datadir ./datadir --networkid 2022 --rpc --rpcport 30303 --allow-insecure-unlock console 2>> ./tmp.log
                   </pre>
                   <b>Note : This will create tmp.log file using 'tail -f tmp.log' you can see the logs output and you will get geth console.</b>
                   <br>
@@ -408,121 +401,381 @@ body {
                  <li>
                   Create 2 new accounts in geth console using personal api.
                   <pre>
-                    > personal.newAccount('sample1');
-                    > personal.newAccount('sample2');  
+> personal.newAccount('sample1');
+> personal.newAccount('sample2');  
                   </pre>
                  </li>
                  <li>
                   Start Miners to mine the blocks
                   <pre>
-                    > miner.start()
+> miner.start()
                   </pre>
                  </li>
                  <li>
                   Every new block creation minor can get reward points to find the total ether count use below web3 api.
                   <pre>
-                    > web3.fromWei(eth.getBalance(eth.coinbase))
+> web3.fromWei(eth.getBalance(eth.coinbase))
                   </pre>
                  </li>
                  <li>
                   You can find account address using following commands
                   <pre>
-                    > eth.accounts OR > personal.listAccounts  
+> eth.accounts OR > personal.listAccounts  
                   </pre>
                  </li>
                  <li>
                   Unlock Accounts using password before sending the Ethers.
                   <pre>
-                    > personal.unlockAccount('0xd857b288ec2053953754cdacf066ae84dbd614b6 ','sample1',0)
+> personal.unlockAccount('0xd857b288ec2053953754cdacf066ae84dbd614b6 ','sample1',0)
                   </pre>
                  </li>
                  <li>
                   You can send mined ethers from one account to another accounts.
                   <pre>
-                    > eth.sendTransaction({from:eth.accounts[0],to:eth.accounts[1],value:web3.toWei('1','ether')})
+> eth.sendTransaction({from:eth.accounts[0],to:eth.accounts[1],value:web3.toWei('1','ether')})
                   </pre>
                  </li>
                </ol>
              </div>
-          </div>
-         </p>
-         
-       </div>
-      </div>
-    </div>
+            </div>
+          </p>  
+          <p class="lead">
+            <h4>Step 2. Download & Install, Truffle & Ganache.</h4>
+            <div>
+               <h5>2.1: Download & Install Truffle</h5>
+               <div class="col-md-12" style="background-color: rgba(0, 0, 0, 0.05); margin: 5%; padding: 2%;" >
+                <ol>
+                  <li>
+                    Truffle can be install using NPM (Node Package Manager). In new Terminal run.
+                    <pre>
+$ npm install -g truffle
+                    </pre>
+                    <b>you can find full details in<a href="https://www.trufflesuite.com/docs/truffle/overview">trufflesuite</a> </b>
+                  </li>
+                  <li>
+                    Create a folder called "calculator"
+                    <pre>
+$ cd calculator
+$ truffle init
+                    </pre>
+                    This will generate all required folders, Migration.sol & Script files.
+                  </li>
+                </ol>
+              </div>
+             </div>
+             <div>
+              <h5>2.2: Download & Install Ganache</h5>
+              <div class="col-md-12" style="background-color: rgba(0, 0, 0, 0.05); margin: 5%; padding: 2%;" >
+               <ol>
+                 <li>
+                  Ganache is GUI tool for Compile, Test & Deploy smart contract on Ethereum Blockchain. Download <a href="https://www.trufflesuite.com/ganache">Ganache</a>
+                 </li>
+                 <li>
+                  Install Ganache. Open Ganache GUI, Create a new workspace with name calculator.
+                 </li>
+               </ol>
+             </div>
+            </div>
+           </p> 
+           <p class="lead">
+            <h4>Step 3. Writing Smart Contract</h4>
+            <div>
+               <h5>3.1 Using Remix IDE :</h5>
+               <div class="col-md-12" style="background-color: rgba(0, 0, 0, 0.05); margin: 5%; padding: 2%;" >
+                <ol>
+                  <li>
+                    In a browser open https://remix.ethereum.org/ this will open new IDE with some sample files.
+                  </li>
+                  <li>
+                    Open plugin Manger isntall SOLIDITY COMPILER & DEPLOY & RUN TRANSACTIONS plugins
+                  </li>
+                  <li>
+                    Create a new file called "calculator.sol". Copy below snipet of code to calculator.sol
+                    <pre>
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.4.16 <0.7.0;
 
-    <div class="container ethFunctions home">
+contract Calculator {
+    uint256 result;
 
-      <hr class="featurette-divider">
+    constructor() public {
+        result = 10;
+    }
 
-      <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    function getResult() public view returns (uint256) {
+        return result;
+    }
+
+    function addToNumber(uint256 num1, uint256 num2) public returns (uint256) {
+        result = num1 + num2;
+        return result;
+    }
+
+    function substractFromNumber(uint256 num1, uint256 num2)
+        public
+        returns (uint256)
+    {
+        result = num1 - num2;
+        return result;
+    }
+}
+                    </pre>
+                  </li>
+                  <li>
+                    Compile & Deploy using the plugins
+                  </li>
+                  <li>
+                    Invoke methods after deploy in Remix IDE and test it.
+                  </li>
+                  <b>To learn more about solidity : read <a href="https://solidity.readthedocs.io/en/v0.5.3/index.html#">Solidity</a> Wiki</b>
+                </ol>
+              </div>
+             </div>
+             <div>
+              <h5>3.2 : Smart Contract Development using Truffle</h5>
+              <div class="col-md-12" style="background-color: rgba(0, 0, 0, 0.05); margin: 5%; padding: 2%;" >
+               <ol>
+                 <li>
+                  In Senction 2.1 You have already executed truffle init and it created all the required folders. Using VSCode Or any IDE you can open the folder.
+                 </li>
+                 <li>
+                  Under Contract folder -> Create a new file called "calculator.sol" 
+                 </li>
+                 <li>
+                  Copy and paste the code we have written in Remix IDE(calculator.sol)
+                 </li>
+                 <li>
+                  Under Migration folder -> create a new file called "2_calcualtor_migration.js"
+                 </li>
+                 <li>
+                  copy the below code snipet into 2_calculator_migration.js file
+                  <pre>
+
+const Calculator = artifacts.require("Calculator");
+
+module.exports = function(deployer) {
+deployer.deploy(Calculator);
+};
+                  </pre>
+                 </li>
+               </ol>
+             </div>
+            </div>
+           </p> 
+           <p class="lead">
+            <h4>Step 4. Compile, Test & Deploy of Smart Contract using Truffle & Ganache.</h4>
+            <div>
+               <h5>4.1 : Compile, Test & Deploy using Truffle</h5>
+               <div class="col-md-12" style="background-color: rgba(0, 0, 0, 0.05); margin: 5%; padding: 2%;" >
+                <ol>
+                  <li>
+                    Once you copied calculator.sol file  in a new terminal run below cmd. This will compile new calculator.sol file.
+                    <pre>
+> truffle compile
+                    </pre>
+                  </li>
+                  <li>
+                    Update truffle-config.js file to deploy and run smart contracts. uncomment below lines and change the port and network_id
+                    <pre>
+development: {
+  host: "127.0.0.1",     
+  port: 30303 ,            
+  network_id: "2022",       
+},
+                    </pre>
+                  </li>
+                  <li>
+                    run truffle migrate command(unlock account before deploy new smart contract).
+                    <pre>
+> truffle migrate
+                    </pre>
+                  </li>
+                  <li>
+                    once compiled and migrate then we can test with below command.
+                    <pre>
+> truffle console
+                    </pre>
+                  </li>
+                  <li>
+                    In console
+                    <pre>
+> let cal = await Calculator.deployed()
+> cal.addToNumber(12,12)
+                    </pre>
+                    <b>Note : you will get the result transaction details.</b>
+                  </li>
+                </ol>
+              </div>
+             </div>
+             <div>
+              <h5>4.1 : Compile, Test & Deploy using Ganache.</h5>
+              <div class="col-md-12" style="background-color: rgba(0, 0, 0, 0.05); margin: 5%; padding: 2%;" >
+               <ol>
+                 <li>
+                  In truffle-config.js file add below lines for ganache after 'development' property.
+                  <pre>
+ganache: {
+  host: "127.0.0.1",     
+  port: 7545,            
+  network_id: "2022"       
+},
+                  </pre>
+                 </li>
+                 <li>
+                  Open Ganache and create a new workspace, hit add project and select truffle-config.js  
+                 </li>
+                 <li>
+                  Choose network id 2022 and leave all other setting to default
+                 </li>
+                 <li>
+                  Hit save workspace which open up the default accounts details.
+                 </li>
+                 <li>
+                  Goto Contract page it says contract not deployed.
+                 </li>
+               </ol>
+             </div>
+             <div>
+              <h5>4.2 : Deploying Contract.</h5>
+              <div class="col-md-12" style="background-color: rgba(0, 0, 0, 0.05); margin: 5%; padding: 2%;" >
+               <ol>
+                 <li>
+                  Open new Terminal and cd to truffle-cofig.js folder and type below command 
+                  <pre>
+> truffle migrage --network ganache 
+                  </pre>
+                 </li>
+               </ol>
+             </div>
+             <div>
+              <h5>4.3 :Invoke deployed smart contract</h5>
+              <div class="col-md-12" style="background-color: rgba(0, 0, 0, 0.05); margin: 5%; padding: 2%;" >
+               <ol>
+                 <li>
+                  Open new Terminal and cd to truffle-cofig.js folder and type below command 
+                  <pre>
+> truffle console --network ganache
+> let cal = await Calculator.deployed()
+> cal.addToNumber(12,12)
+                  </pre>
+                  <b>Note : You will get the transaction result.</b>
+                 </li>
+               </ol>
+             </div>
+            </div>
+           </p>
+           <p class="lead">
+            <h4>Step 5. Invoke smart contract from web browser using Java Sctipt.</h4>
+            <div>
+               <h5>5.1 : Using simple Html File with Javascript</h5>
+               <div class="col-md-12" style="background-color: rgba(0, 0, 0, 0.05); margin: 5%; padding: 2%;" >
+                <ol>
+                  <li>
+                    create a new file called index.html to truffle-cofig.js folder in your faviorte IDE and copy the below code into index.html
+                    <pre><xmp>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Smart Contract</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" crossorigin="anonymous">
+        <style>
+            td {
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="padding: 3%;">
+            <h2>Ethereum Network Setup details.</h2>
+            <table>
+                <tr>
+                    <td>
+                        <label>Ethereum Ganache RPC Server Url</label>
+                    </td>
+                    <td>
+                        <input type="text" name="url" id="url" placeholder="http://127.0.0.1:8545" value="http://127.0.0.1:8545">
+                    </td>
+                </tr>    
+                <tr>
+                    <td>
+                        <label>Network Id from truffle-config.js file</label>
+                    </td>
+                    <td>
+                        <input type="text" name="networkId" id="networkId" placeholder="2023" value="2023">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="Click to initiate network." id="btn_initiate_network">
+                    </td>
+                </tr>
+            </table>
+            <label style="color: green;" id="metadata_message_1"></label>
+            <br>
+            <label style="color: green;" id="metadata_message_2"></label>
         </div>
-        <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
+        <div id="smart_contract_meta_data" style="padding: 3%;" hidden  >
+            <h2>Deployed Smart Contract Meta data.</h2>
+            <table>
+                <tr>
+                    <td>
+                        Account Address : 
+                    </td>
+                    <td>
+                        <input type="text" id="account_address" style="width: 400px;" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Account Private Key: 
+                    </td>
+                    <td>
+                        <input type="text" id="account_private_key" style="width: 400px;" required >
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label style="color: green;"><b>Note : </b>Account Address and private key you can get it from Ganache -> Accounts -> Show Private Key. Use the first Account.</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Deployed Smart Contract Address.</label>
+                    </td>
+                    <td>
+                        <input type="text" id="address_smartcontract" style="width: 400px;" placeholder="Smart Contract Address get from Ganache -> Contract Tab." required >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label><b>ABI for Calculator Smart Contract you can get it after compile of Smart Contract from build/contracts folder.</b></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ABI of Calculator Smart Contract:
+                    </td>
+                    <td>
+                        <textarea style="width: 400px; height: 300px;" id="abi_data" required>
 
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
-
-    </div><!-- /.container -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script> -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/truffle-contract@4.0.31/dist/truffle-contract.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-    <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js" charset="utf-8" type="text/javascript"></script>
-
-    <script>
-      let navebar_names = ["li_navbar_home","li_navbar_dropdown","navbar_about","navbar_contact"];
-      let navebar_active = "#li_navbar_home";
-
-      let contractJson = [
+[
     {
       "inputs": [],
       "stateMutability": "nonpayable",
       "type": "constructor"
     },
     {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "x",
-          "type": "uint256"
-        }
-      ],
-      "name": "set",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
       "inputs": [],
-      "name": "get",
+      "name": "getResult",
       "outputs": [
         {
           "internalType": "uint256",
@@ -533,28 +786,553 @@ body {
       "stateMutability": "view",
       "type": "function",
       "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "num1",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "num2",
+          "type": "uint256"
+        }
+      ],
+      "name": "addToNumber",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "num1",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "num2",
+          "type": "uint256"
+        }
+      ],
+      "name": "substractFromNumber",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
     }
   ]
+                        </textarea>
+                    </td>
+                </tr>
+            </table>
+            <h2>Calculator Smart Contract</h2>
+            <table>
+                <tr>
+                    <td>
+                        <label>Enter A Number : </label>
+                    </td>
+                    <td>
+                        <input type="number" id="input_a" required value="12" style="width: 150px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label> Enter B Number: </label>
+                    </td>
+                    <td>
+                        <input type="number" id="input_b" required value="15" style="width: 150px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label> Opetaions: </label>
+                    </td>
+                    <td>
+                        <input type="button" name="Add" id="btn_add" value="Add" style="margin-right: 2%;">
+                        <input type="button" name="Get Result" id="btn_getResult" value="Get Current Value">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label> Result </label>
+                    </td>
+                    <td>
+                        <label id="final_result" style="color: green;"></label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/truffle-contract@4.0.31/dist/truffle-contract.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js" charset="utf-8" type="text/javascript"></script>
+        <script>
+            //You need to start Ganache network in port. 
+            let url = "http://127.0.0.1:8545";
+            let networkId = 2023;
+            let httpProvider;
+            let contract_address;
+            let account_address;
+            let account_private_key;
+            let abi;
+            let wallet;
+            let contractWithSigner;
+            let contract;
 
-      let address = '0xb0de1cfDD51a91157a698c9f73d38a2C939BA06B';
+            $(window).on('load',function() {
+                init();
+            });
+
+            function init() {
+                pageSetup();
+            }
+
+            function pageSetup() {
+                $('#btn_initiate_network').click(function() {
+                    url = $('#url').val();
+                    networkId = $('#networkId').val();
+                    console.log("The url is",url);
+                    console.log("And the network id Is ", networkId);
+                    ethereumNetworkSetup();
+                });
+
+                $('#btn_add').click(function () {
+                    initiateMetaData();
+                    contract = new ethers.Contract(contract_address,abi,httpProvider);
+                    wallet = new ethers.Wallet(account_private_key, httpProvider);
+                    contractWithSigner = contract.connect(wallet);
+                    
+                    let valA = $('#input_a').val();
+                    let valB = $('#input_b').val();
+                    contractWithSigner.addToNumber(valA,valB).then((tx) => {
+                        console.log("called the smart contract successfull. And the Has is : ", tx.hash);
+                        tx.wait().then(() => {
+                            contract.getResult().then((newValue) => {
+                                console.log(newValue);
+                                $('#final_result').text(newValue);
+                            });
+                        });
+                    });
+                });
+
+                $('#btn_getResult').click(function () {
+                    initiateMetaData();
+                    contract = new ethers.Contract(contract_address,abi,httpProvider);
+                    contract.getResult().then((result) => {
+                        $('#final_result').text(result);
+                    });
+                });
+                
+            }
+
+            function initiateMetaData() {
+                contract_address = $('#address_smartcontract').val();
+                abi = $('#abi_data').val();
+                account_address = $('#account_address').val();
+                account_private_key = $('#account_private_key').val();
+            }
+
+            function ethereumNetworkSetup() {
+                try {
+                    httpProvider = new ethers.providers.JsonRpcProvider(url);
+                    httpProvider.getBlockNumber().then((blockNu) => {
+                        $('#metadata_message_1').text("Network Initiated Successfully. The total number of Block is : "+ blockNu + ".");
+                        $('#metadata_message_2').text("Browser succecssfully able to communicate with your Ganache Network and its ready to invoke Calculator Smart Contract.")
+                        $('#smart_contract_meta_data').show();
+                    })
+                } catch(e) {
+                    console.log(e);
+                    alert('Error while setting up network. Check Ganache network up and running and Url is correct.');
+                }
+            }
+        </script>
+    </body>
+</html>
+
+</xmp></pre>
+                  </li>
+                </ol>
+              </div>
+             </div>
+           </p>  
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+
+<div class="container ethFunctions_api" id="container_api">
+  <div class="row featurette">
+    <div class="col-md-12">
+      <div style="text-align: center;">
+        <h1>Tutorial 2 : Deploy & Invoke Smart Contract in Infura Or Your Private Network dynamically.</h1>
+        <p>In this blog you will be learning How to Deploy and Invoke Smart Contract in Infura Or Your private network.</p>
+      </div>
+      <div class="row featurette">
+        <div class="col-md-10">
+          <p><h4>Notes : </h4></p>
+          <p class="lead">
+            <p>1 : To proceed with Tutorial 2. You need to complete <a href="#navebar_home">Tutorial 1 </a> Or You need to have basic understanding of Ethereum Blockchain.</p> 
+            <p>2 : To proceed with Tutorial 2. You need to have <a href="https://infura.io/">Infura Account on any TestNets</a> Or Your Private Ethereum Network Account Or Ganache to Depoy Smart Contract</p>
+            <p>3 : Using <a href="https://metamask.io/">Metamask </a> you can have your own TestNet accounts and using <a href="https://faucet.ropsten.be/">Ropsten Faucet</a> You can get Ethers. </p>
+            <br>
+          </p>
+          <p class="lead">
+            <br>
+            <div style="padding-left: 0%;">
+              <p class="lead">
+                <h4 style="text-align: center;">Connecting to Ethereum</h4>
+                <br>
+                <table style="width: 100%; text-align: left;">
+                  <tr>
+                    <td style="width: 40%;">
+                      <label> Url to connect with Ethereum Network : </label>
+                    </td>
+                    <td style="width: 40%;">
+                        <input type="text" id="api_txt_eth_network_connector_url" placeholder="Url" style="width: 80%;" value="https://ropsten.infura.io/v3/7f99dee2c7054b4c9dc4b465e62c5e04"> 
+                    </td>
+                    <td style="width: 20%;">
+                      <input type="button" value="Connect Me" id="api_btn_eth_network_connector_url">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width: 40%;">
+                      <label> Result :  </label>
+                    </td>
+                    <td style="width: 60%;" colspan="2">
+                        <label id="api_btn_eth_network_connector_url_result"></label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>Get Block Number : </label>
+                    </td>
+                    <td>
+                      <input type="button" id="api_btn_get_block_number" value="Latest Block Number">
+                    </td>
+                    <td>
+                      <label id="api_lbl_get_block_number"></label>
+                    </td>
+                  </tr>
+                </table>
+                <hr>
+              </p>
+              <div>
+                <p class="lead" id="api_deeploy_new_contract_p">
+                  <h4 style="text-align: center;">Deploying New smart contract</h4>
+                  <br>
+                  <table style="width: 100%; text-align: left;">
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> Base Address From Ganache Or Your private network Address : </label>
+                      </td>
+                      <td style="width: 60%;">
+                          <input type="text" id="api_txt_deploy_base_address" placeholder="Url" style="width: 80%;" value="0x0AFcc4CEc33354f7738fA695D220b311c503F1CB"> 
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> Private Key of this base address : </label>
+                      </td>
+                      <td style="width: 60%;">
+                          <input type="text" id="api_txt_deploy_base_address_private_key" placeholder="Url" style="width: 80%;" value="782B0D694A0E51512836D2D158116C8BE40C114C161C3741F77C2FC4B8B8996E"> 
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> ABI after Compile Your Smart Contract(Will be available in compile folder Calculator.json file) :  </label>
+                      </td>
+                      <td style="width: 60%;">
+                          <textarea id="api_txt_deploy_abi" style="width: 80%; height: 300px;">
+                            [
+                            {
+                              "inputs": [],
+                              "stateMutability": "nonpayable",
+                              "type": "constructor"
+                            },
+                            {
+                              "inputs": [
+                                {
+                                  "internalType": "uint256",
+                                  "name": "x",
+                                  "type": "uint256"
+                                }
+                              ],
+                              "name": "set",
+                              "outputs": [],
+                              "stateMutability": "nonpayable",
+                              "type": "function"
+                            },
+                            {
+                              "inputs": [],
+                              "name": "get",
+                              "outputs": [
+                                {
+                                  "internalType": "uint256",
+                                  "name": "",
+                                  "type": "uint256"
+                                }
+                              ],
+                              "stateMutability": "view",
+                              "type": "function",
+                              "constant": true
+                            }
+                          ]                            
+                          </textarea>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> Byte Code of the smart contract(Will be available in compile folder Calculator.json file) : </label>
+                      </td>
+                      <td style="width: 60%;">
+                          <textarea id="api_txt_deploy_byte_code" style="width: 80%; height: 100px;">
+                            0x608060405234801561001057600080fd5b50600a60008190555060c7806100276000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146062575b600080fd5b606060048036036020811015604b57600080fd5b8101908080359060200190929190505050607e565b005b60686088565b6040518082815260200191505060405180910390f35b8060008190555050565b6000805490509056fea2646970667358221220383e6159d4ebe3d52f167a3d7685ef1c06b79b745f88054de09274a7bd96d48e64736f6c63430006040033
+                          </textarea>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" style="text-align: center;">
+                        <button id="api_btn_deploy_smart_contract">Deploy Smart Contract.</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>Deployed Smart Contract Address : </label>
+                      </td>
+                      <td>
+                        <label id="api_lbl_deploy_success_contract_address"></label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>Deployed Smart Contract Transaction Hash : </label>
+                      </td>
+                      <td>
+                        <label id="api_lbl_deploy_success_contract_hash"></label>
+                      </td>
+                    </tr>
+                  </table>
+                  <hr>
+                </p>
+                <p class="lead" id="api_invoke_deployed_contract_p">
+                  <h4 style="text-align: center;">Invoking Deployed Contract.</h4>
+                  <br>
+                  <table style="width: 80%; text-align: left;">
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> Deployed Contract Address : </label>
+                      </td>
+                      <td style="width: 60%;">
+                          <input type="text" id="api_txt_deployed_contract_address" placeholder="Not Base Addresss!" style="width: 80%;" value="0x40e04fB5b062aBB843d2551336Be897ff9bA7B0A"> 
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> Private Key of this base address : </label>
+                      </td>
+                      <td style="width: 60%;">
+                          <input type="text" id="api_txt_deployed_base_address_private_key" placeholder="Private Key of Base Address." style="width: 80%;" value="782B0D694A0E51512836D2D158116C8BE40C114C161C3741F77C2FC4B8B8996E"> 
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> ABI after Compile Your Smart Contract(Will be available in compile folder Calculator.json file) :  </label>
+                      </td>
+                      <td style="width: 60%;">
+                          <textarea id="api_txt_deployed_abi" style="width: 80%; height: 300px;">
+                            [
+                            {
+                              "inputs": [],
+                              "stateMutability": "nonpayable",
+                              "type": "constructor"
+                            },
+                            {
+                              "inputs": [
+                                {
+                                  "internalType": "uint256",
+                                  "name": "x",
+                                  "type": "uint256"
+                                }
+                              ],
+                              "name": "set",
+                              "outputs": [],
+                              "stateMutability": "nonpayable",
+                              "type": "function"
+                            },
+                            {
+                              "inputs": [],
+                              "name": "get",
+                              "outputs": [
+                                {
+                                  "internalType": "uint256",
+                                  "name": "",
+                                  "type": "uint256"
+                                }
+                              ],
+                              "stateMutability": "view",
+                              "type": "function",
+                              "constant": true
+                            }
+                          ]
+                          </textarea>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> Method Name to Invoke :  </label>
+                      </td>
+                      <td style="width: 40%;">
+                          <input type="text" id="api_txt_deployed_method_name" style="width: 80%;" value="get">
+                      </td>
+                      <td>
+                        Is View Function? : <input type="checkbox" id="api_chx_is_view_function"> 
+                     </td>
+                    </tr>
+                    <tr>
+                      <td style="width: 40%;">
+                        <label> Any Comma Seperated Arg List : </label>
+                      </td>
+                      <td style="width: 50%;">
+                        <input type="text" id="api_txt_deployed_arg_list" style="width: 80%;" placeholder="!!!Supports Only Single Argument!!!!!.">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" style="text-align: center;">
+                        <button id="api_btn_deployed_invoke_smart_contract">Invoke Smart Contract Method.</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>Result : </label>
+                      </td>
+                      <td>
+                        <label id="api_lbl_invoke_success_contract_address"></label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label>Deployed Smart Contract Transaction Hash : </label>
+                      </td>
+                      <td>
+                        <label id="api_lbl_invoke_success_contract_hash"></label>
+                      </td>
+                    </tr>
+                  </table>
+                  <hr>
+                </p>             
+               </div>
+            </div>
+          </p>
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>  
+
+<div class="container ethFunctions_project_1_walet" id="container_project_1_calculator_app">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+    </div>
+  </div>
+</div>
+<div class="container ethFunctions_project_1_walet" id="container_project_2_wallet_app">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="container">
+  <div class="row featurette">
+    <footer>
+      <hr class="featurette-divider">
+      <p class="pull-right"><a href="#">Back to top</a></p>
+      <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>    
+  </div>
+</div>
+
+    <script src="http://fenixrepo.fao.org/cdn/js/bootstrap-table/1.10.1/docs/assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/truffle-contract@4.0.31/dist/truffle-contract.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js" charset="utf-8" type="text/javascript"></script>
+    
+    <script>
+      let navebar_names = ["li_navbar_home","li_navbar_dropdown","navbar_about","navbar_contact"];
+      let navebar_active = "#li_navbar_home";
+      let page_active= "#container_home";
+      let page_names=["#container_home","#container_api","#container_project_1_calculator_app","#container_project_2_wallet_app"]
 
       $(window).on('load',function() {
-        console.log("Loaded......")
-        pageSetup();
-        init();
+        console.log("Loaded......");
+        initiateHomePage();
+        //initEthNetwork();
+        initiateApiPage();
       }); 
 
-      function pageSetup() {
-        navebarSetup();
-      }
+      function initiateHomePage() {
 
-      function navebarSetup() {
+        page_names.forEach((pageName) => {
+          console.log("the page name is : ", pageName);
+          if(pageName !== '#container_api')
+            $(pageName).hide();
+        });
+
+        $('#api_deeploy_new_contract_p').hide();
+
         $("#li_navbar_home").on('click',function() {
           util_navebarSetup('#li_navbar_home',navebar_active);
+          showHidePage('#container_home',page_active);
         });
 
         $('#li_navbar_dropdown').on('click',function() {
           util_navebarSetup('#li_navbar_dropdown',navebar_active);
+        })
+
+        $('#li_navbar_ethereum_api').on('click',function() {
+          showHidePage('#container_api',page_active);
+        });
+
+        $('#li_navbar_calculator_app').on('click',function() {
+          showHidePage('#container_project_1_calculator_app',page_active);
+        })
+
+        $('#li_navbar_ethereum_wallet').on('click',function() {
+          showHidePage('#container_project_2_wallet_app',page_active);
         })
 
         $('#li_navbar_about').on('click',function() {
@@ -566,24 +1344,74 @@ body {
         })
       }
 
+
       function util_navebarSetup(active,inactive) {
         $(inactive).removeClass('active');
         $(active).addClass('active');
         navebar_active = active;
       }
 
+      function showHidePage(showPage,hidePage) {
+        $(showPage).show();
+        $(hidePage).hide();
+        page_active = showPage;
+      }
 
 
-      let provider;
-      let network;
+      /*
+      API Releated Vairable and Javascript Code.
+      */
+      let api_btn_eth_network_connector_url;
+      let api_provider;
+      let api_network;
+      let api_wallet;
+      let api_baseAddress;
+      let api_privateKey;
+      let api_abi;
+      let api_byteCode;
+      let api_contract_factory;
+      let api_contract;
+      let api_contractAddress;
+      let api_transaction_hash;
 
-      async function init() {
-        provider = new ethers.providers.JsonRpcProvider();
-        network = await provider.getNetwork();
-        getBalance(address);
-        //getTransactionCount(address);
-        invokeContract();
-        console.log(ethers.utils.keccak256([ 0x42 ]));
+      function initiateApiPage() {
+        $('#api_btn_eth_network_connector_url').on('click',function(e) {
+          api_btn_eth_network_connector_url = $('#api_txt_eth_network_connector_url').val();
+          initEthNetwork();
+        })
+
+        $('#api_btn_get_block_number').on('click',function() {
+          api_provider.getBlockNumber().then((blockNu) => {
+            $('#api_lbl_get_block_number').html(blockNu);
+          })
+        });
+
+        $('#api_btn_deploy_smart_contract').on('click',function() {
+          deployNewSmartContract();
+        });
+
+        $('#api_btn_deployed_invoke_smart_contract').on('click',function() {
+          invokeDeployedContract();
+        });
+      }
+
+      async function initEthNetwork() {
+        try {
+
+          api_provider = new ethers.providers.JsonRpcProvider(api_btn_eth_network_connector_url);
+          api_provider.ready.then((pro)=> {
+            console.log("connected... ",api_btn_eth_network_connector_url)
+            $('#api_btn_eth_network_connector_url_result').text("Connected");
+            $('#api_btn_eth_network_connector_url_result').css("color","green");
+          },(err) => {
+            console.error("error or error.", err);
+            $('#api_btn_eth_network_connector_url_result').text("Error Try Again, Url Might be wrong. Or Server May not be up.");
+            $('#api_btn_eth_network_connector_url_result').css("color","red");
+          }).catch((e) => {
+            console.error("error while connecting to network. Either Url wrong Or Network may not up.", e);
+          }).finally(console.log);
+        } catch(e) {
+        }
       }
 
       function getBalance(address) {
@@ -599,12 +1427,70 @@ body {
         });
       }
 
-      async function invokeContract() {
-        let contract = await new ethers.Contract(address, contractJson, provider);
-        contract.get().then((value) => {
-          console.log("The vlaue is get is : ", value);
-        });
+      async function deployNewSmartContract() {
+        try {
+          api_baseAddress = $('#api_txt_deploy_base_address').val().trim();
+          api_privateKey = $('#api_txt_deploy_base_address_private_key').val().trim();
+          api_abi = $('#api_txt_deploy_abi').val().trim();
+          api_byteCode = $('#api_txt_deploy_byte_code').val().trim();
+          api_wallet = new ethers.Wallet(api_privateKey, api_provider);
+
+          api_contract_factory = new ethers.ContractFactory(api_abi, api_byteCode, api_wallet);
+          api_contract = await api_contract_factory.deploy();
+          api_contractAddress = api_contract.address;
+          api_transaction_hash = api_contract.deployTransaction.hash;
+          await api_contract.deployed();
+          console.log('The Contract deployed successfully.');
+
+          $('#api_lbl_deploy_success_contract_address').text(api_contractAddress);
+          $('#api_lbl_deploy_success_contract_hash').text(api_transaction_hash);
+          $('#api_btn_deploy_smart_contract').text("Deployed Successfully.");
+          $('#api_btn_deploy_smart_contract').css("color","green");
+        }catch(e) {
+          console.error("error while deploying new smart contract.", e);
+          $('#api_lbl_deploy_success_contract_address').text("Error while deploying Smart Contract. Please give proper data & Cehck Console too.");
+          $('#api_lbl_deploy_success_contract_address').css("color","red"); 
+        }
       }
+
+      async function invokeDeployedContract() {
+        try {
+          let deployed_smart_contract_add = $('#api_txt_deployed_contract_address').val().trim();
+          let base_address_private_key = $('#api_txt_deployed_base_address_private_key').val().trim();
+          let deployed_smart_contract_method_name = $('#api_txt_deployed_method_name').val().trim();
+          let deployed_smart_contract_argument = $('#api_txt_deployed_arg_list').val().trim();
+          let deployed_is_view_function = $('#api_chx_is_view_function').prop("checked");
+          let deployed_abi = $('#api_txt_deployed_abi').val().trim();
+          let just_contract = new ethers.Contract(deployed_smart_contract_add,deployed_abi,api_provider);
+          let just_wallet = new ethers.Wallet(base_address_private_key,api_provider);
+          let contractWithSigner = await just_contract.connect(just_wallet);
+          console.log(deployed_is_view_function);
+          if(!deployed_is_view_function) {
+            let tx = await contractWithSigner[deployed_smart_contract_method_name](deployed_smart_contract_argument);
+            console.log(tx.hash);
+            $('#api_lbl_invoke_success_contract_address').text("Invoked Successfully. Processing...");
+
+            $('#api_lbl_invoke_success_contract_hash').html(tx.hash);
+            $('#api_lbl_invoke_success_contract_hash').css("color","green");
+
+            await tx.wait();
+            
+            $('#api_lbl_invoke_success_contract_address').text("Invoked Successfully. Completed...");
+            $('#api_lbl_invoke_success_contract_address').css("color","green");
+
+          } else {
+            let val = await contractWithSigner[deployed_smart_contract_method_name]();
+            console.log(val.toString());
+            $('#api_lbl_invoke_success_contract_address').text(val);
+            $('#api_lbl_invoke_success_contract_address').css("color","green");
+
+            $('#api_lbl_invoke_success_contract_hash').text("");
+          }
+        }catch(err) {
+          console.error("Error while invoking deployed smart contract method.", err);
+        }
+      }
+
     </script>
   </body>
 </html>
