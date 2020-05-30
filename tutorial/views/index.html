@@ -1005,7 +1005,7 @@ ganache: {
                       <label> Url to connect with Ethereum Network : </label>
                     </td>
                     <td style="width: 40%;">
-                        <input type="text" id="api_txt_eth_network_connector_url" placeholder="http://localhost:8545 Or infura mainnet or test url." style="width: 80%;"> 
+                        <input type="text" id="api_txt_eth_network_connector_url" placeholder="http://localhost:8545 Or infura mainnet or test url." style="width: 95%;"> 
                     </td>
                     <td style="width: 20%;">
                       <input type="button" value="Connect Me" id="api_btn_eth_network_connector_url">
@@ -1242,7 +1242,7 @@ ganache: {
             $(pageName).hide();
         });
 
-        $('#api_deeploy_new_contract_p').hide();
+        //$('#api_deeploy_new_contract_p').hide();
 
         $("#li_navbar_home").on('click',function() {
           util_navebarSetup('#li_navbar_home',navebar_active);
@@ -1276,12 +1276,14 @@ ganache: {
 
 
       function util_navebarSetup(active,inactive) {
+        if(active === inactive) return;
         $(inactive).removeClass('active');
         $(active).addClass('active');
         navebar_active = active;
       }
 
       function showHidePage(showPage,hidePage) {
+        if(showPage === hidePage) return;
         $(showPage).show();
         $(hidePage).hide();
         page_active = showPage;
