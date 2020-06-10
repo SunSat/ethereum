@@ -7,9 +7,13 @@
     "dev": "nodemon ./bin/www"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^3.0.1",
+    "bip39": "^3.0.2",
     "bootstrap": "^4.5.0",
     "cookie-parser": "~1.4.4",
+    "crypto-js": "^4.0.0",
     "debug": "~2.6.9",
+    "ethers": "^4.0.47",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jquery": "^3.5.1",
@@ -17,6 +21,8 @@
     "nodemon": "^2.0.4",
     "popper.js": "^1.16.1",
     "pug": "2.0.0-beta11",
+    "sha-256": "^1.0.3",
+    "uglify-js": "^3.9.4",
     "web3": "^1.2.8"
   }
 }
